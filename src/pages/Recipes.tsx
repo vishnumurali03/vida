@@ -121,7 +121,7 @@ export default function Recipes() {
                    selectedCuisine === 'popular' ? 'Most Popular Recipes' :
                    `${selectedCuisine} Recipes`}
                 </h3>
-                {!loading && (
+                {!loading && recipes.length > 0 && (
                   <span className="text-muted">
                     {recipes.length} recipe{recipes.length !== 1 ? 's' : ''} found
                   </span>

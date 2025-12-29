@@ -9,7 +9,7 @@ body {
 /* Custom styles */
 .hero-section {
   background: linear-gradient(135deg, #e8f5e8 0%, #e3f2fd 100%);
-  min-height: 80vh;
+  min-height: 50vh;
 }
 
 .feature-card {

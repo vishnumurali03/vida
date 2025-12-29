@@ -256,11 +256,6 @@ export default function Recipe() {
                       </svg>
                     )}
                   </div>
-                  <div className="d-flex align-items-center">
-                    <span className="text-warning me-1">⭐</span>
-                    <span className="me-2">{recipe.rating}</span>
-                    <small className="text-muted">({recipe.reviews} reviews)</small>
-                  </div>
                 </div>
               </div>
 

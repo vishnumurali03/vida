@@ -19,6 +19,7 @@ export default function Footer() {
               <li className="mb-2"><a href="/" className="text-light text-decoration-none">Home</a></li>
               <li className="mb-2"><a href="/recipes" className="text-light text-decoration-none">Browse Recipes</a></li>
               <li className="mb-2"><a href="/submit" className="text-light text-decoration-none">Submit Recipe</a></li>
+              <li className="mb-2"><a href="/about" className="text-light text-decoration-none">About Us</a></li>
             </ul>
           </div>
 
