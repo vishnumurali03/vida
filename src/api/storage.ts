@@ -24,7 +24,7 @@ export const uploadRecipeImage = async (file: File, recipeId: string): Promise<s
     const fileName = `${recipeId}-${Date.now()}.${fileExt}`
 
     // Upload file to Supabase storage
-    const { data, error } = await supabase.storage
+    const { error } = await supabase.storage
       .from(STORAGE_BUCKETS.RECIPE_IMAGES)
       .upload(fileName, file, {
         cacheControl: '3600',
@@ -65,7 +65,7 @@ export const uploadUserAvatar = async (file: File, userId: string): Promise<stri
     const fileName = `${userId}-${Date.now()}.${fileExt}`
 
     // Upload file to Supabase storage
-    const { data, error } = await supabase.storage
+    const { error } = await supabase.storage
       .from(STORAGE_BUCKETS.USER_AVATARS)
       .upload(fileName, file, {
         cacheControl: '3600',

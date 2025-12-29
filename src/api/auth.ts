@@ -2,7 +2,7 @@ import { supabase } from './supabase'
 import type { Database } from '../types/supabase'
 
 // Type aliases for user data
-type DbUser = Database['public']['Tables']['users']['Row']
+// type DbUser = Database['public']['Tables']['users']['Row']
 type DbUserInsert = Database['public']['Tables']['users']['Insert']
 type DbUserUpdate = Database['public']['Tables']['users']['Update']
 
@@ -250,7 +250,7 @@ export const updatePassword = async (newPassword: string): Promise<void> => {
 
 // Listen to auth state changes
 export const onAuthStateChange = (callback: (user: AuthUser | null) => void) => {
-  return supabase.auth.onAuthStateChange(async (event, session) => {
+  return supabase.auth.onAuthStateChange(async (_event, session) => {
     if (session?.user) {
       const user = await getCurrentUser()
       callback(user)

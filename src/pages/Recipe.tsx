@@ -3,7 +3,8 @@ import { useState, useEffect } from 'react'
 import { type Recipe as RecipeType } from '../types/Recipe'
 import { getRecipeById } from '../api/recipes'
 
-// Sample recipe data - in a real app, this would come from an API
+// Sample recipe data - no longer needed, kept for reference
+/*
 const sampleRecipes = {
   '123e4567-e89b-12d3-a456-426614174000': {
     id: '123e4567-e89b-12d3-a456-426614174000',
@@ -121,6 +122,7 @@ const sampleRecipes = {
     }
   }
 }
+*/
 
 export default function Recipe() {
   const { uuid } = useParams<{ uuid: string }>()

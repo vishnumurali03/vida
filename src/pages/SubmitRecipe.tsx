@@ -15,7 +15,7 @@ const commonTags = [
 ]
 
 export default function SubmitRecipe() {
-  const { user, isAuthenticated, isLoading, loginWithGoogle, loginWithFacebook } = useAuth()
+  const { user, isLoading } = useAuth()
   const [currentStep, setCurrentStep] = useState(1)
   const [imageFile, setImageFile] = useState<File | null>(null)
   const [imagePreview, setImagePreview] = useState<string>('')

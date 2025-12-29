@@ -3,7 +3,7 @@ import type { Database } from '../types/supabase'
 import type { Recipe, RecipeFormData, CuisineOption } from '../types/Recipe'
 
 // Type aliases for easier use
-type DbRecipe = Database['public']['Tables']['recipes']['Row']
+// type DbRecipe = Database['public']['Tables']['recipes']['Row']
 type DbRecipeInsert = Database['public']['Tables']['recipes']['Insert']
 type DbRecipeUpdate = Database['public']['Tables']['recipes']['Update']
 
