@@ -1,0 +1,87 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+body {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom styles */
+.hero-section {
+  background: linear-gradient(135deg, #e8f5e8 0%, #e3f2fd 100%);
+  min-height: 80vh;
+}
+
+.feature-card {
+  transition: all 0.3s ease;
+  border: none;
+  border-radius: 1rem;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.image-card {
+  transition: all 0.3s ease;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.image-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.image-card img {
+  transition: transform 0.3s ease;
+}
+
+.image-card:hover img {
+  transform: scale(1.1);
+}
+
+.btn-custom {
+  border-radius: 50px;
+  padding: 12px 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-custom:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.navbar-brand {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #28a745 !important;
+}
+
+.cta-section {
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+}
+
+.cuisine-card {
+  transition: all 0.3s ease;
+}
+
+.cuisine-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15) !important;
+}
+
+.cuisine-card:hover .cuisine-overlay {
+  opacity: 1 !important;
+}
+
+.cuisine-overlay {
+  transition: opacity 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #28a745;
+  box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+}
