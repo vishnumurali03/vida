@@ -1,0 +1,25 @@
+# Netlify Build Configuration
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# Environment variables for build
+[build.environment]
+  NODE_VERSION = "20"
+
+# Skip secrets scanning for public Vite environment variables
+[build.processing.secrets]
+  # These are intentionally public and embedded in the client bundle
+  omit_keys = [
+    "VITE_SUPABASE_URL",
+    "VITE_SUPABASE_ANON_KEY",
+    "VITE_AUTH0_DOMAIN",
+    "VITE_AUTH0_CLIENT_ID"
+  ]
+
+# Redirects for single-page app (SPA) routing
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
