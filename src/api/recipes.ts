@@ -1,4 +1,4 @@
-import { supabase, supabaseAdmin } from './supabase'
+import { supabase } from './supabase'
 import type { Database } from '../types/supabase'
 import type { Recipe, RecipeFormData, CuisineOption } from '../types/Recipe'
 
@@ -202,7 +202,7 @@ export const createRecipe = async (recipeData: RecipeFormData, userId: string, i
       is_published: true
     }
 
-    const { data, error } = await supabaseAdmin
+    const { data, error } = await supabase
       .from('recipes')
       .insert(newRecipe)
       .select(`

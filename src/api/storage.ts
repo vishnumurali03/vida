@@ -1,4 +1,4 @@
-import { supabaseAdmin } from './supabase'
+import { supabase } from './supabase'
 
 // Storage bucket names
 export const STORAGE_BUCKETS = {
@@ -24,7 +24,7 @@ export const uploadRecipeImage = async (file: File, recipeId: string): Promise<s
     const fileName = `${recipeId}-${Date.now()}.${fileExt}`
 
     // Upload file to Supabase storage
-    const { data, error } = await supabaseAdmin.storage
+    const { data, error } = await supabase.storage
       .from(STORAGE_BUCKETS.RECIPE_IMAGES)
       .upload(fileName, file, {
         cacheControl: '3600',
@@ -36,7 +36,7 @@ export const uploadRecipeImage = async (file: File, recipeId: string): Promise<s
     }
 
     // Get public URL
-    const { data: { publicUrl } } = supabaseAdmin.storage
+    const { data: { publicUrl } } = supabase.storage
       .from(STORAGE_BUCKETS.RECIPE_IMAGES)
       .getPublicUrl(fileName)
 
@@ -65,7 +65,7 @@ export const uploadUserAvatar = async (file: File, userId: string): Promise<stri
     const fileName = `${userId}-${Date.now()}.${fileExt}`
 
     // Upload file to Supabase storage
-    const { data, error } = await supabaseAdmin.storage
+    const { data, error } = await supabase.storage
       .from(STORAGE_BUCKETS.USER_AVATARS)
       .upload(fileName, file, {
         cacheControl: '3600',
@@ -77,7 +77,7 @@ export const uploadUserAvatar = async (file: File, userId: string): Promise<stri
     }
 
     // Get public URL
-    const { data: { publicUrl } } = supabaseAdmin.storage
+    const { data: { publicUrl } } = supabase.storage
       .from(STORAGE_BUCKETS.USER_AVATARS)
       .getPublicUrl(fileName)
 
@@ -91,7 +91,7 @@ export const uploadUserAvatar = async (file: File, userId: string): Promise<stri
 // Delete file from storage
 export const deleteFile = async (bucket: string, filePath: string): Promise<void> => {
   try {
-    const { error } = await supabaseAdmin.storage
+    const { error } = await supabase.storage
       .from(bucket)
       .remove([filePath])
 
@@ -106,7 +106,7 @@ export const deleteFile = async (bucket: string, filePath: string): Promise<void
 
 // Get file URL from storage path
 export const getFileUrl = (bucket: string, filePath: string): string => {
-  const { data: { publicUrl } } = supabaseAdmin.storage
+  const { data: { publicUrl } } = supabase.storage
     .from(bucket)
     .getPublicUrl(filePath)
   

@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from 'react'
 import { useAuth0, User as Auth0User } from '@auth0/auth0-react'
-import { supabaseAdmin } from '../api/supabase'
+import { supabase } from '../api/supabase'
 import type { AuthUser } from '../api/auth'
 
 interface AuthContextType {
@@ -48,7 +48,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         setError(null)
         
         // Check if user exists in Supabase
-        const { data: existingUser } = await supabaseAdmin
+        const { data: existingUser } = await supabase
           .from('users')
           .select('*')
           .eq('email', auth0User.email!)
@@ -58,7 +58,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
         if (existingUser) {
           // Update existing user
-          const { data: updatedUser, error: updateError } = await supabaseAdmin
+          const { data: updatedUser, error: updateError } = await supabase
             .from('users')
             .update({
               name: auth0User.name || auth0User.email!,
@@ -83,7 +83,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
             updated_at: new Date().toISOString()
           }
 
-          const { data: createdUser, error: createError } = await supabaseAdmin
+          const { data: createdUser, error: createError } = await supabase
             .from('users')
             .insert(newUser)
             .select()
